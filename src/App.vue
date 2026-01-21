@@ -1,4 +1,7 @@
-<script setup></script>
+<script setup>
+// Import webcard.js to enable webcard functionality
+import '@/utils/webcard.js'
+</script>
 
 <template>
   <h1>You did it!</h1>
