@@ -1,0 +1,3 @@
+name = "mykad-reader"
+main = "src/main.js"
+compatibility_date = "2026-01-21"
