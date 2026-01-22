@@ -1,23 +1,12 @@
-# mykad-fullstack
+# Mykad-Reader
 
-This template should help get you started developing with Vue 3 in Vite.
+## [Live Deployment](https://mykad-reader.pages.dev/)
+Webpage for loading data from MyKad (Malaysia IC) cards for display. [A browser extension](https://github.com/cardid/webcard) is required to load the card readers, as they are usually blocked by WebUSB. Please be cautioned with the potential risks of using third-party extensions to process personal data.
 
-## Recommended IDE Setup
+This app uses the browser extension to allow users to view their MyKad details, and is written to easily allow users to make API calls with the data.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Recommended Browser Setup
-
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Future Work
+As of writing, WebUSB blocks access to Smartcard readers for security issues, though currently there is work towards a [Web Smart Card API](https://wicg.github.io/web-smart-card/). Once that has been implemented in browsers, this project may be refactored to use that instead.
 
 ## Project Setup
 
