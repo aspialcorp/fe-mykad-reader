@@ -103,6 +103,10 @@ const fieldList = computed(() => {
 
 <template>
   <div class="container">
+    <div class="disclaimer">
+      ⚠️ This page only works on <strong>Google Chrome</strong> or <strong>Microsoft Edge</strong>. Other browsers are not supported.
+    </div>
+
     <header>
       <h1>MyKad Reader</h1>
       <p class="hint">Need this extension: <a href="https://webcard.cardid.org/webcard.msi">webcard.msi</a></p>
@@ -187,4 +191,5 @@ dd{margin:0;color:#222}
 .raw-toggle{margin-top:12px}
 .raw{margin-top:12px;padding:12px;background:#0f1724;color:#e6eef8;overflow:auto;border-radius:6px}
 .no-data{margin-top:18px;color:#666}
+.disclaimer{margin-bottom:12px;padding:10px 14px;border-radius:6px;background:#fff8e1;border:1px solid #f0c040;color:#7a5800;font-size:13px}
 </style>
