@@ -8,7 +8,7 @@ const readers = ref([])
 const selectedReader = ref('')
 const readData = ref(null)
 const loading = ref(false)
-const showRaw = ref(false)
+const showRaw = ref(true)
 
 onMounted(() => {
   handleLoadReaders()
