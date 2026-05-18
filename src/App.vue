@@ -38,12 +38,35 @@ async function handleReadData() {
     }
     await reader.connect(true)
     loading.value = true
-    const response = await getRawDataFromReader(reader)
-    readData.value = parseMyKadData(response)
-    const result = JSON.stringify({ type: 'MYKAD_RESULT', data: readData.value })
-    console.log(result);
-    await reader.disconnect()
-    loading.value = false
+   const response = await getRawDataFromReader(reader)
+readData.value = parseMyKadData(response)
+
+const result = {
+  type: 'MYKAD_RESULT',
+  data: readData.value
+}
+
+console.log("========== MYKAD DEBUG ==========")
+console.log("Sending Result:", result)
+console.log("window.opener:", window.opener)
+
+try {
+  if (window.opener && !window.opener.closed) {
+    window.opener.postMessage(JSON.stringify(result), "*")
+    console.log("SUCCESS: Result sent to OutSystems")
+  } else {
+    console.log("ERROR: No opener detected")
+  }
+} catch (err) {
+  console.log("ERROR: Failed to send result")
+  console.error(err)
+}
+
+console.log("========== END MYKAD DEBUG ==========")
+
+await reader.disconnect()
+loading.value = false
+  
   } catch (err) {
     console.error('Error during reading process:', err)
     loading.value = false
