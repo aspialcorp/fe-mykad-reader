@@ -40,7 +40,7 @@ async function handleReadData() {
     loading.value = true
     const response = await getRawDataFromReader(reader)
     readData.value = parseMyKadData(response)
-    const result = { type: 'MYKAD_RESULT', data: readData.value }
+    const result = JSON.stringify({ type: 'MYKAD_RESULT', data: readData.value })
     console.log(result);
     await reader.disconnect()
     loading.value = false
