@@ -40,6 +40,7 @@ async function handleReadData() {
     loading.value = true
     const response = await getRawDataFromReader(reader)
     readData.value = parseMyKadData(response)
+    new BroadcastChannel('mykad').postMessage({ type: 'MYKAD_RESULT', data: readData.value })
     await reader.disconnect()
     loading.value = false
   } catch (err) {
